@@ -29,16 +29,16 @@ And here's what the Component looks like sitting next to the `p-calendar` compon
 ```html
 <div class="p-fluid p-grid p-formgrid">
   <div class="p-field p-col-12 p-md-4">
-      <label>Single Selection or Range</label>
-      <p-calendar 
-        #calendar     <-------------- component needs reference to Calendar component
-        [(ngModel)]="rangeDates"
-        selectionMode="single"
-        [showButtonBar]="true"
-        [readonlyInput]="true"
-        inputId="range">
-      </p-calendar>
-      <calendar-mode-toggle-buttons [calendar]="calendar"></calendar-mode-toggle-buttons> <---- boom
+    <label>Single Selection or Range</label>
+    <p-calendar
+      #calendar     <-------------- component needs reference to Calendar component
+      [(ngModel)]="rangeDates"
+      selectionMode="single"
+      [showButtonBar]="true"
+      [readonlyInput]="true"
+      inputId="range">
+    </p-calendar>
+    <calendar-mode-toggle-buttons [calendar]="calendar"></calendar-mode-toggle-buttons> <---- boom
   </div>
 </div>
 ```
