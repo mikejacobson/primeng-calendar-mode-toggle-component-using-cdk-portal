@@ -15,11 +15,11 @@ const primeNgSpanClasses = 'p-button p-button-text';
       <div class="toggle-wrapper">
         <button class="${primeNgButtonClasses}"
                 [class.selected]="calendar.selectionMode==='single'"
-                (click)="setMode('single', true)">Date</button>
+                (click)="setMode('single', { clearSelection: true })">Date</button>
         <span class="${primeNgSpanClasses}">|</span>
         <button class="${primeNgButtonClasses}"
                 [class.selected]="calendar.selectionMode === 'range'"
-                (click)="setMode('range', true)">Date Range</button>
+                (click)="setMode('range', { clearSelection: true })">Date Range</button>
       </div>
     </ng-template>
   `,
@@ -105,7 +105,7 @@ export class CalendarModeToggleButtonsComponent implements AfterViewInit, OnDest
     });
   }
 
-  setMode(newMode: string, clearSelection = false) {
+  setMode(newMode: string, { clearSelection = false } = {}) {
     this.calendar.selectionMode = newMode;
 
     if (clearSelection) {
