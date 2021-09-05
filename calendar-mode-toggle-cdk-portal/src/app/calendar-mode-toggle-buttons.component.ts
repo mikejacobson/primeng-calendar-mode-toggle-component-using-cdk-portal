@@ -97,12 +97,12 @@ export class CalendarModeToggleButtonsComponent implements AfterViewInit, OnDest
     }
 
     this.calendar.value = this.calendar.value[0];
+    this.calendar.hideOverlay();
 
     setTimeout(() => {
       this.setMode('single');
       this.calendar.writeValue(this.calendar.value);
-      this.calendar.hideOverlay();
-    });
+    }, 50);
   }
 
   setMode(newMode: string, { clearSelection = false } = {}) {
