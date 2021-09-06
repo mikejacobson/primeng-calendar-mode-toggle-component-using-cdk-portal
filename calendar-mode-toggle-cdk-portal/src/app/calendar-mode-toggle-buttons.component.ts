@@ -31,7 +31,7 @@ const primeNgSpanClasses = 'p-button p-button-text';
 
     .toggle-wrapper button {
       letter-spacing: .03125rem;
-      padding: 8px;
+      padding: 0.5rem;
     }
 
     .toggle-wrapper button:focus {
