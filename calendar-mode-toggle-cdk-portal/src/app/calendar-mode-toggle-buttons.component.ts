@@ -30,10 +30,16 @@ const primeNgSpanClasses = 'p-button p-button-text';
     }
 
     .toggle-wrapper button {
-      letter-spacing: 0.235px;
+      letter-spacing: 0.5px;
       padding: 8px;
     }
+
+    .toggle-wrapper button:focus {
+      box-shadow: none;
+    }
+
     .toggle-wrapper button.selected {
+      cursor: default;
       font-weight: 700;
       letter-spacing: 0;
     }
@@ -105,8 +111,12 @@ export class CalendarModeToggleButtonsComponent implements AfterViewInit, OnDest
     }, 50);
   }
 
-  setMode(newMode: string, { clearSelection = false } = {}) {
-    this.calendar.selectionMode = newMode;
+  setMode(selectedMode: string, { clearSelection = false } = {}) {
+    if (this.calendar.selectionMode === selectedMode) {
+      return;
+    }
+
+    this.calendar.selectionMode = selectedMode;
 
     if (clearSelection) {
       this.clearDateSelection();
