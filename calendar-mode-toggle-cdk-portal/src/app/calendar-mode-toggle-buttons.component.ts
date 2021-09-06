@@ -30,7 +30,7 @@ const primeNgSpanClasses = 'p-button p-button-text';
     }
 
     .toggle-wrapper button {
-      letter-spacing: 0.5px;
+      letter-spacing: .03125rem;
       padding: 8px;
     }
 
